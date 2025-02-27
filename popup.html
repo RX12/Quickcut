@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 250px;
+      height: auto;
+      overflow: hidden;
+      background: transparent;
+      box-sizing: border-box;
+    }
+
+    * {
+      box-sizing: inherit;
+    }
+
+    body {
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: calc(100% - 2px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    h3 {
+      color: #00ffff;
+      margin: 0 0 12px 0;
+      font-size: 1.2em;
+    }
+
+    .shortcut {
+      margin: 10px 0;
+    }
+
+    .shortcut-label {
+      font-size: 1em;
+      color: #00ffff;
+      font-weight: bold;
+    }
+
+    .shortcut-value {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-left: 8px;
+    }
+
+    #customUrlInput {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      color: #fff;
+    }
+
+    #setCustomUrl {
+      padding: 8px;
+      background: rgba(0, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      color: #00ffff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #setCustomUrl:hover {
+      background: rgba(0, 255, 255, 0.2);
+      border-color: #00ffff;
+      transform: scale(1.02);
+    }
+
+    #changeShortcut {
+      padding: 12px;
+      background: rgba(0, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      color: #00ffff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 15px;
+    }
+
+    #changeShortcut:hover {
+      background: rgba(0, 255, 255, 0.2);
+      border-color: #00ffff;
+      transform: scale(1.02);
+    }
+
+    p {
+      font-size: 0.85em;
+      line-height: 1.4;
+      color: #aaa;
+      margin: 10px 0 0 0;
+    }
+  </style>
+</head>
+<body>
+  <h3>Quickcut --> </h3>
+
+  <div class="shortcut">
+    <span class="shortcut-label">Toggle Recent Tabs:</span>
+    <span class="shortcut-value" id="toggleTabsShortcut">Ctrl+Shift+9</span>
+  </div>
+
+  <div class="shortcut">
+    <span class="shortcut-label">Password Manager:</span>
+    <span class="shortcut-value" id="passwordManagerShortcut">Ctrl+Shift+P</span>
+  </div>
+
+  <div class="shortcut">
+    <span class="shortcut-label">Google Lens:</span>
+    <span class="shortcut-value" id="googleLensShortcut">Ctrl+Shift+L</span>
+  </div>
+
+  <div class="shortcut">
+    <span class="shortcut-label">Custom URL:</span>
+    <span class="shortcut-value" id="customUrlShortcut">Ctrl+Shift+U</span>
+  </div>
+
+  <input type="text" id="customUrlInput" placeholder="Enter a custom URL">
+  <button id="setCustomUrl">Set Custom URL</button>
+
+  <button id="changeShortcut">Change Shortcuts</button>
+  <p>Click the button to configure your preferred keyboard shortcuts in Chrome's settings</p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

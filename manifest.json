@@ -1,0 +1,49 @@
+{
+    "manifest_version": 3,
+    "name": "quickcut",
+    "version": "1.0",
+    "description": "Switch between two most recent tabs and more",
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "permissions": ["tabs", "commands", "storage"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "commands": {
+      "toggle-recent-tabs": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+9"
+        },
+        "description": "Toggle between last two tabs"
+      },
+      "open-password-manager": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+P"
+        },
+        "description": "Open Chrome Password Manager"
+      },
+      "open-google-lens": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+L"
+        },
+        "description": "Open Google Lens Search"
+      },
+      "open-custom-url": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+U"
+        },
+        "description": "Open Custom URL"
+      }
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+      }
+    }
+  }
